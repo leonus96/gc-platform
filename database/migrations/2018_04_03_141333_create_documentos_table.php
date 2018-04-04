@@ -16,7 +16,7 @@ class CreateDocumentosTable extends Migration
         Schema::create('documentos', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha_vencimiento');
-            $table->string(10);
+            $table->string('estado',10);
             $table->timestamps();
         });
     }
