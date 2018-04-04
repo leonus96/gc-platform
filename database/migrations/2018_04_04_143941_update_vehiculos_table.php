@@ -14,10 +14,10 @@ class UpdateVehiculosTable extends Migration
     public function up()
     {
         Schema::table('vehiculos', function ($table) {
-            $table->unsignedInteger('fv_soat')->change();
-            $table->unsignedInteger('fv_leasing')->change();
-            $table->unsignedInteger('fv_tar_cir')->change();
-            $table->unsignedInteger('fv_rev_tec')->change();
+            $table->unsignedInteger('fv_soat')->nullable()->change();
+            $table->unsignedInteger('fv_leasing')->nullable()->change();
+            $table->unsignedInteger('fv_tar_cir')->nullable()->change();
+            $table->unsignedInteger('fv_rev_tec')->nullable()->change();
 
             $table->foreign('fv_soat')->references('id')->on('documentos')->change();
             $table->foreign('fv_leasing')->references('id')->on('documentos')->change();

@@ -20,14 +20,14 @@ class CreatePersonasTable extends Migration
             $table->string('apellidos')->nullable(false);
             $table->date('f_nac')->nullable(false);
             $table->date('fv_brevete')->nullable(false);
-            $table->date('cat_brevete')->nullable(false);
+            $table->string('cat_brevete')->nullable(false);
             $table->string('region')->nullable(false);
             $table->string('ciudad')->nullable(false);
             $table->string('direccion')->nullable(false);
             $table->string('email')->nullable(false);
             $table->string('telefono', 15);
             $table->string('celular', 15)->nullable(false);
-            $table->unsignedInteger('id_empresa');
+            $table->unsignedInteger('id_empresa')->nullable();
             $table->string('ocupacion');
             $table->string('como_llego');
             $table->text('description');

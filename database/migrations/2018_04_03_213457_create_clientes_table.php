@@ -15,8 +15,8 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_persona');
-            $table->unsignedInteger('id_empresa');
+            $table->unsignedInteger('id_persona')->nullable();
+            $table->unsignedInteger('id_empresa')->nullable();
 
             $table->foreign('id_persona')->references('id')->on('personas');
             $table->foreign('id_empresa')->references('id')->on('empresas');
