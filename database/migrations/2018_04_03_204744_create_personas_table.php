@@ -16,17 +16,17 @@ class CreatePersonasTable extends Migration
         Schema::create('personas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('dni', 10);
-            $table->string('nombres')->nullable(false)->change();
-            $table->string('apellidos')->nullable(false)->change();
-            $table->date('f_nac')->nullable(false)->change();
-            $table->date('fv_brevete')->nullable(false)->change();
-            $table->date('cat_brevete')->nullable(false)->change();
-            $table->string('region')->nullable(false)->change();
-            $table->string('ciudad')->nullable(false)->change();
-            $table->string('direccion')->nullable(false)->change();
-            $table->string('email')->nullable(false)->change();
+            $table->string('nombres')->nullable(false);
+            $table->string('apellidos')->nullable(false);
+            $table->date('f_nac')->nullable(false);
+            $table->date('fv_brevete')->nullable(false);
+            $table->date('cat_brevete')->nullable(false);
+            $table->string('region')->nullable(false);
+            $table->string('ciudad')->nullable(false);
+            $table->string('direccion')->nullable(false);
+            $table->string('email')->nullable(false);
             $table->string('telefono', 15);
-            $table->string('celular', 15)->nullable(false)->change();
+            $table->string('celular', 15)->nullable(false);
             $table->unsignedInteger('id_empresa');
             $table->string('ocupacion');
             $table->string('como_llego');
