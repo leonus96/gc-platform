@@ -19,7 +19,7 @@ class CreatePersonasTable extends Migration
             $table->string('nombres')->nullable(false);
             $table->string('apellidos')->nullable(false);
             $table->date('f_nac')->nullable(false);
-            $table->date('fv_brevete')->nullable(false);
+            $table->unsignedInteger('fv_brevete');
             $table->string('cat_brevete')->nullable(false);
             $table->string('region')->nullable(false);
             $table->string('ciudad')->nullable(false);
@@ -30,9 +30,13 @@ class CreatePersonasTable extends Migration
             $table->unsignedInteger('id_empresa')->nullable();
             $table->string('ocupacion');
             $table->string('como_llego');
-            $table->text('description');
+            $table->text('descripcion');
+            $table->unsignedInteger('id_referido');
+
 
             $table->foreign('id_empresa')->references('id')->on('empresas');
+            $table->foreign('fv_brevete')->references('id')->on('documentos');
+            $table->foreign('id_referido')->references('id')->on('personas');
             $table->unique('dni');
             $table->timestamps();
         });

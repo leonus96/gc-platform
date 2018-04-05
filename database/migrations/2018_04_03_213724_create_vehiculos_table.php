@@ -16,13 +16,22 @@ class CreateVehiculosTable extends Migration
         Schema::create('vehiculos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('placa', 6)->nullable(false)->change();
-            $table->date('fv_soat');
-            $table->date('fv_leasing');
-            $table->date('fv_tar_cir');
-            $table->date('fv_rev_tec');
-            $table->unsignedInteger('id_cliente');
+            $table->unsignedInteger('fv_soat')->nullable();
+            $table->unsignedInteger('fv_leasing')->nullable();
+            $table->unsignedInteger('fv_tar_cir')->nullable();
+            $table->unsignedInteger('fv_rev_tec')->nullable();
 
-            $table->foreign('id_cliente')->references('id')->on('clientes');
+            $table->unsignedInteger('id_persona')->nullable();
+            $table->unsignedInteger('id_empresa')->nullable();
+
+
+            $table->foreign('fv_soat')->references('id')->on('documentos');
+            $table->foreign('fv_leasing')->references('id')->on('documentos');
+            $table->foreign('fv_tar_cir')->references('id')->on('documentos');
+            $table->foreign('fv_rev_tec')->references('id')->on('documentos');
+
+            $table->foreign('id_persona')->references('id')->on('personas');
+            $table->foreign('id_empresa')->references('id')->on('empresas');
             $table->timestamps();
         });
     }
