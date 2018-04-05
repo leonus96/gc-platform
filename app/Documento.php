@@ -11,4 +11,8 @@ class Documento extends Model
         'fecha_vencimiento',
         'estado'
     ];
+
+    public function llamadas () {
+        return $this->hasMany(Llamada::class);
+    }
 }

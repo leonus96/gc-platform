@@ -23,4 +23,8 @@ class Empresa extends Model
     public function personas () {
         return $this->hasMany(Persona::class);
     }
+
+    public function vehiculos () {
+        return $this->hasMany(Vehiculo::class);
+    }
 }

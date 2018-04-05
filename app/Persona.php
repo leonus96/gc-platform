@@ -25,7 +25,19 @@ class Persona extends Model
         'como_llego',
         'descripcion',
     ];
-    public function brevete() {
+
+    public function brevete()
+    {
         return $this->hasOne(Documento::class);
+    }
+
+    public function vehiculos()
+    {
+        return $this->hasMany(Vehiculo::class);
+    }
+
+    public function referido()
+    {
+        return $this->hasOne(Persona::class);
     }
 }
