@@ -31,7 +31,7 @@ class CreatePersonasTable extends Migration
             $table->string('ocupacion');
             $table->string('como_llego');
             $table->text('descripcion');
-            $table->unsignedInteger('id_referido');
+            $table->unsignedInteger('id_referido')->nullable();
 
 
             $table->foreign('id_empresa')->references('id')->on('empresas');
