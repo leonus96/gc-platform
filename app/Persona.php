@@ -28,7 +28,7 @@ class Persona extends Model
 
     public function brevete()
     {
-        return $this->hasOne(Documento::class);
+        return $this->hasOne(Documento::class, 'id', 'fv_brevete');
     }
 
     public function vehiculos()

@@ -18,3 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//API
+Route::prefix('api')->group(function () {
+    // Token:
+    Route::get('/token', function () {
+
+    });
+    // Personas:
+    Route::get('/personas', 'PersonaController@index')->name('personas.index');
+    Route::get('/personas/total', 'PersonaController@count')->name('personas.count');
+    Route::get('/personas/por-vencer', 'PersonaController@toExpire')->name('personas.toExpire');
+    Route::post('/personas', 'PersonaController@store')->name('personas.store');
+    Route::get('/personas/{id}', 'PersonaController@show')->name('personas.show');
+    Route::put('/personas/{id}', 'PersonaController@update')->name('personas.update');
+    Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.destroy');
+
+    // Empresas:
+});
