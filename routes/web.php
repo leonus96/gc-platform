@@ -11,11 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Landing page:
+Route::get('/', function () {return view('welcome'); });
 
-//API
+// Plataforma:
+Route::get('/plataforma', function () {return view('platform'); });
+
+// API
 Route::prefix('api')->group(function () {
     // Token:
     Route::get('/token', function () {
