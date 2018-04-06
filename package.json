@@ -12,13 +12,15 @@
     "devDependencies": {
         "axios": "^0.17",
         "cross-env": "^5.1",
-        "laravel-mix": "^1.0",
+        "laravel-mix": "^1.7.2",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "vue": "^2.5.16"
     },
     "dependencies": {
         "npm": "^5.8.0",
         "to": "^0.2.9",
-        "update": "^0.7.4"
+        "update": "^0.7.4",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1"
     }
 }
