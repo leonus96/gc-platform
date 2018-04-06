@@ -243,7 +243,7 @@ h2.bnr-sub-title {
 
 .btn-more, .btn-more:focus {
   margin-left: 15px;
-  border: 1px solid #be9e21;
+  border: 2px solid #be9e21;
   color: #be9e21;
 }
 
@@ -857,7 +857,7 @@ Responsive media queries
 }
 
 .btn-platform {
-  border: 1px solid rgb(190, 158, 33) !important;
+  border: 2px solid rgb(190, 158, 33) !important;
   color: rgb(190, 158, 33);
   padding: 10px;
   border-radius: 60px;
