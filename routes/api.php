@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +11,19 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Auth:
+Route::post('/register', 'AuthController@register');
+Route::post('/login', 'AuthController@login');
+
+// Personas:
+Route::group(['middleware' => ['jwt.auth']], function () {
+    Route::get('/personas', 'PersonaController@index')->name('personas.index');
+    Route::get('/personas/total', 'PersonaController@count')->name('personas.count');
+    Route::get('/personas/por-vencer', 'PersonaController@toExpire')->name('personas.toExpire');
+    Route::post('/personas', 'PersonaController@store')->name('personas.store');
+    Route::get('/personas/{id}', 'PersonaController@show')->name('personas.show');
+    Route::put('/personas/{id}', 'PersonaController@update')->name('personas.update');
+    Route::delete('/personas/{id}', 'PersonaController@destroy')->name('personas.destroy');
 });
+
+// Empresas:
