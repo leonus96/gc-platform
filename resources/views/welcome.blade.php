@@ -43,7 +43,7 @@
                                         <li class=""><a href="#portfolio">Servicios</a></li>
                                         <!--<li class=""><a href="#testimonial">Clientes</a></li>-->
                                         <li class=""><a href="#contact">Contáctanos</a></li>
-                                        <li class="btn-platform-container"><a  class="" href="#"><span class="btn-platform">Plataforma</span></a></li>
+                                        <li class="btn-platform-container"><a  class="" href="{{url('/plataforma#/login')}}"><span class="btn-platform">Plataforma</span></a></li>
                                     </ul>
                                 </div>
                             </div>

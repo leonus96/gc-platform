@@ -4,6 +4,7 @@
 
 // Variables
 @import "variables";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "base";
+#app {
+  height: 100%;
+}
