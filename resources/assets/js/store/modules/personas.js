@@ -2,15 +2,21 @@ import axios from 'axios';
 import api from '../../api.json';
 
 const personaStore = {
+    namespaced: true,
     state: {
-        personas: []
+        personas: [],
+        toExpire: []
     },
     getters: {
-        getPersonas: state => state.personas
+        getPersonas: state => state.personas,
+        getToExpire: state => state.toExpire
     },
     mutations: {
         FETCH(state, personas) {
-            state.personas = personas
+            state.personas = personas;
+        },
+        FETCH_TO_EXPIRE(state, toExpire) {
+            state.toExpire = toExpire;
         }
     },
     actions: {
@@ -64,6 +70,14 @@ const personaStore = {
                 descripcion: persona.descripcion,
                 id_referido: persona.id_referido
             });
+        },
+        fetchToExpire({commit}, payload) {
+            console.log(payload.token);
+            return axios.get(`${api.personas}/por-vencer`,{
+                headers: {'Authorization': `Bearer ${payload.token}`}
+            })
+                .then(response => commit('FETCH_TO_EXPIRE', response.data))
+                .catch(error => console.log(error.message));
         }
     },
 };

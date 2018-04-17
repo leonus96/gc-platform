@@ -28,7 +28,8 @@
                     this.$store.dispatch('fetchUser', {
                         email: this.email,
                         password: this.password
-                    })
+                    });
+                    this.$router.push('resumen');
                 }
             }
         },

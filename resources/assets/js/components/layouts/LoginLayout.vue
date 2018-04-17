@@ -15,12 +15,11 @@
 
 <style scoped lang="scss">
     @import "~ed-grid";
-
     .login-layout {
-        height: 100%;
-        @include edContainer;
-        @include mainCenter;
-        @include crossCenter;
-
+        margin: auto;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
