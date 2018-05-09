@@ -15,4 +15,10 @@
 Route::get('/', function () {return view('welcome'); });
 
 // Plataforma:
-Route::get('/plataforma', function () {return view('platform'); });
+Route::group(['prefix' => 'plataforma'], function (){
+    // Auth:
+    Auth::routes();
+    //DashBoard:
+    Route::get('/', function () {return view('adminlte.dashboard'); })->middleware('auth');
+
+});

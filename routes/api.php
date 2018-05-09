@@ -12,8 +12,8 @@
 */
 
 // Auth:
-Route::post('auth/register', 'AuthController@register');
-Route::post('auth/login', 'AuthController@login');
+Route::post('auth/register', 'AuthJWTController@register');
+Route::post('auth/login', 'AuthJWTController@login');
 
 // Personas:
 Route::group(['middleware' => ['jwt.auth']], function () {

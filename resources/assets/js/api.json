@@ -1,5 +1,0 @@
-{
-  "auth":  "/api/auth",
-  "personas": "/api/personas",
-  "empresas": "/api/empresas"
-}
